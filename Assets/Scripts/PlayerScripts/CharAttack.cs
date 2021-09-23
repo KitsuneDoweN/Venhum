@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharAttack : MonoBehaviour
 {
     [SerializeField]
-    float speed = 3;
+    private float speed = 3.0f;
     private Rigidbody2D m_rigid;
 
     private float curTime;

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CharAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Animator animator;
+    private Rigidbody2D rigid;
+
     void Start()
     {
         
