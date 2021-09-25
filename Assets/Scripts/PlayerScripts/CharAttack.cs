@@ -9,6 +9,7 @@ public class CharAttack : MonoBehaviour
     private float curTime;
     private float coolTime = 0.5f;
 
+    public float attackDamage = 1;
     public GameObject attackObject;
     public Collider2D[] attackCollider;
 
@@ -22,6 +23,13 @@ public class CharAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
+                foreach(Collider2D collider in attackCollider)
+                {
+                    if(collider.tag == "Enemy")
+                    {
+                        collider.GetComponent<MonsterManager>().TakeDamage(attackDamage);
+                    }
+                }
                 attackObject.SetActive(true);
                 curTime = coolTime;
             }

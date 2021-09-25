@@ -29,21 +29,21 @@ public class CharMove : MonoBehaviour
 
     public void Dash()
     {
-        //if (curTime <= 0)
-        //{
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
+        if (curTime <= 0)
+        {
+             if (Input.GetKeyDown(KeyCode.Space))
+             {
                 moveSpeed = 10.0f;
-            }
-            else
-            {
+             }
+             else
+             {
                 moveSpeed = 4.0f;
-            }
-       // }
-       // else
-       // {
-       //     curTime -= Time.deltaTime;
-       // }
+             }
+        }
+        else
+        {
+            curTime -= Time.deltaTime;
+        }
             
     }
     

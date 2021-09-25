@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterManager : MonoBehaviour
 {
-    public float monsterHp = 10;
+    public float monsterHp = 10.0f;
 
     void Start()
     {
