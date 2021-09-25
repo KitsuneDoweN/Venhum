@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CharAttack : MonoBehaviour
 {
-    [SerializeField]
-    private float speed = 3.0f;
     private Rigidbody2D m_rigid;
 
     private float curTime;
-    [SerializeField]
     private float coolTime = 0.5f;
+
+    public GameObject attackObject;
+    public Collider2D[] attackCollider;
 
     public void Init(Rigidbody2D rigid)
     {
@@ -22,7 +22,13 @@ public class CharAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
+                attackObject.SetActive(true);
                 curTime = coolTime;
+            }
+            else
+            {
+                attackObject.SetActive(false);
+
             }
         }
         else

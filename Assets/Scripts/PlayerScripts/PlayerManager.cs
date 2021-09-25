@@ -7,7 +7,8 @@ public class PlayerManager : MonoBehaviour
     private CharAttack m_attack;
     private CharMove m_move;
     private Rigidbody2D rigid;
-    
+
+    public float playerHp;
     void Init()
     {
         m_attack = GetComponent<CharAttack>();
@@ -28,5 +29,6 @@ public class PlayerManager : MonoBehaviour
     {
         m_move.Move();
         m_attack.Attack();
+        m_move.Dash();
     }
 }

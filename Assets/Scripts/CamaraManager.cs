@@ -6,8 +6,8 @@ public class CamaraManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject target;
-    /*[SerializeField]
-    private float moveSpeed;*/
+    [SerializeField]
+    private float moveSpeed = 2.5f;
     private Vector2 targetPosition;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class CamaraManager : MonoBehaviour
         if(target.gameObject != null)
         {
             targetPosition.Set(target.transform.position.x, target.transform.position.y);
-            transform.position = Vector2.Lerp(this.transform.position, targetPosition, Time.deltaTime);
+            transform.position = Vector2.Lerp(this.transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
     }
 }

@@ -8,7 +8,10 @@ public class CharMove : MonoBehaviour
     private float moveSpeed = 4.0f;
     private Rigidbody2D m_rigid;
     private Vector2 movement = new Vector2();
-    // Start is called before the first frame update
+
+    private float curTime;
+    private float coolTime = 0.2f;
+
     public void Init(Rigidbody2D rigid)
     {
         m_rigid = rigid;
@@ -22,6 +25,26 @@ public class CharMove : MonoBehaviour
 
         movement.Normalize();
         m_rigid.velocity = movement * moveSpeed;
+    }
+
+    public void Dash()
+    {
+        //if (curTime <= 0)
+        //{
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                moveSpeed = 10.0f;
+            }
+            else
+            {
+                moveSpeed = 4.0f;
+            }
+       // }
+       // else
+       // {
+       //     curTime -= Time.deltaTime;
+       // }
+            
     }
     
 }
