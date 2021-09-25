@@ -8,7 +8,10 @@ public class PlayerManager : MonoBehaviour
     private CharMove m_move;
     private Rigidbody2D rigid;
 
+    [SerializeField]
+    private float playerDashStamina = 10;
     public float playerHp = 100.0f;
+    
     void Init()
     {
         m_attack = GetComponent<CharAttack>();
@@ -29,7 +32,7 @@ public class PlayerManager : MonoBehaviour
     {
         m_move.Move();
         m_attack.Attack();
-        m_move.Dash();
+        m_move.Dash(playerDashStamina);
     }
     public void TakeDamage(float damage)
     {

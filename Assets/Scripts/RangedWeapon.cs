@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToolScripts : MonoBehaviour
+public class RangedWeapon : MonoBehaviour
 {
     public float speed = 15;
 

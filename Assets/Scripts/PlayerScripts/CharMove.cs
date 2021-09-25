@@ -11,6 +11,8 @@ public class CharMove : MonoBehaviour
 
     private float curTime;
     private float coolTime = 0.2f;
+    
+    public float playerStamina = 100.0f;
 
     public void Init(Rigidbody2D rigid)
     {
@@ -27,14 +29,21 @@ public class CharMove : MonoBehaviour
         m_rigid.velocity = movement * moveSpeed;
     }
 
-    public void Dash()
+    public void Dash(float stamina)
     {
         if (curTime <= 0)
         {
              if (Input.GetKeyDown(KeyCode.Space))
              {
                 moveSpeed = 10.0f;
-             }
+                playerStamina = playerStamina - stamina;
+                curTime = coolTime;
+                
+                if(playerStamina <= 0)
+                {
+                    // ´ë½¬ x
+                }
+            }
              else
              {
                 moveSpeed = 4.0f;
