@@ -5,17 +5,26 @@ using UnityEngine;
 public class RangedWeapon : MonoBehaviour
 {
     public float speed = 15;
-
     public float distance;
-
     public LayerMask isLayer;
+
+    private float weaponDamage = 1;
+    private CharAttack m_attack;
 
     void Start()
     {
         Invoke("DestroyBullet", 2);
     }
-
-    // Update is called once per frame
+   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<MonsterManager>().TakeDamage(weaponDamage);
+            Debug.Log("damage");
+            Destroy(gameObject);
+        }
+    }
     void Update()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.right, distance, isLayer);
