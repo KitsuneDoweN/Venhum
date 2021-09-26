@@ -11,7 +11,6 @@ public class CharAttack : MonoBehaviour
 
     public float attackDamage = 1;
     public GameObject attackObject;
-    public Collider2D[] attackCollider;
 
     public void Init(Rigidbody2D rigid)
     {
@@ -23,13 +22,6 @@ public class CharAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
-                foreach(Collider2D collider in attackCollider)
-                {
-                    if(collider.tag == "Enemy")
-                    {
-                        collider.GetComponent<MonsterManager>().TakeDamage(attackDamage);
-                    }
-                }
                 attackObject.SetActive(true);
                 curTime = coolTime;
             }

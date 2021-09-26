@@ -5,19 +5,13 @@ using UnityEngine;
 public class MonsterManager : MonoBehaviour
 {
     public float monsterHp = 10.0f;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
+   
     public void TakeDamage(float damage)
     {
         monsterHp = monsterHp - damage;
+        if(monsterHp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

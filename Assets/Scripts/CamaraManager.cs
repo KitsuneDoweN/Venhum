@@ -7,7 +7,7 @@ public class CamaraManager : MonoBehaviour
     [SerializeField]
     private GameObject target;
     [SerializeField]
-    private float moveSpeed = 2.5f;
+    private float moveSpeed = 3f;
     private Vector2 targetPosition;
     // Start is called before the first frame update
     void Start()

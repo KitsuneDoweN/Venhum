@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
@@ -43,8 +43,8 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint = 0;
 
         }
-    }
-    void FixedUpdate()
+    }*/
+    /*void FixedUpdate()
     {
         if(path == null)
         {
@@ -80,5 +80,5 @@ public class EnemyAI : MonoBehaviour
         {
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }
-    }
-}
+    }*/
+//}
